@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         $this->call([
+            CountrySeeder::class,
             PermissionSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,

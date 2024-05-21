@@ -38,7 +38,7 @@
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>
-                            , <a href="#">{{ __('Dashcode') }}</a>
+                            , <a href="#">{{ __('Azaz Services') }}</a>
                             {{ __('All Rights Reserved.') }}
                         </div>
                     </div>

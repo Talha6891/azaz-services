@@ -44,6 +44,18 @@ class PermissionSeeder extends Seeder
             ['name'=>'menu role_permission_permissions', 'module_name'=>'menu'],
             ['name'=>'menu role_permission_roles', 'module_name'=>'menu'],
             ['name'=>'menu database_backup', 'module_name'=>'menu'],
+
+            ['name' => 'category index', 'module_name' => 'category'],
+            ['name' => 'category create', 'module_name' => 'category'],
+            ['name' => 'category update', 'module_name' => 'category'],
+            ['name' => 'category delete', 'module_name' => 'category'],
+            ['name' => 'category show', 'module_name' => 'category'],
+
+            ['name' => 'service index', 'module_name' => 'service'],
+            ['name' => 'service create', 'module_name' => 'service'],
+            ['name' => 'service update', 'module_name' => 'service'],
+            ['name' => 'service delete', 'module_name' => 'service'],
+            ['name' => 'service show', 'module_name' => 'service'],
         ]);
 
         $web = collect([]);

@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use ProtoneMedia\LaravelVerifyNewEmail\MustVerifyNewEmail;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Permission\Traits\HasRoles;
-use Spatie\Image\Manipulations;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class User extends Authenticatable implements MustVerifyEmail, HasMedia
+
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles, MustVerifyNewEmail, InteractsWithMedia;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, MustVerifyNewEmail;
 
     protected array $guard_name = ['sanctum', 'web'];
 
@@ -32,9 +31,9 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         'password',
         'email_verified_at',
         'phone',
-        'post_code',
+        'address',
         'city',
-        'country',
+        'country_id',
         'photo',
     ];
 
@@ -57,15 +56,6 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         'email_verified_at' => 'datetime',
     ];
 
-
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this
-            ->addMediaConversion('preview')
-            ->fit(Manipulations::FIT_CROP, 300, 300)
-            ->nonQueued();
-    }
-
     /**
      * Local scope to exclude auth user
      * @param $query
@@ -86,5 +76,13 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         return $query->where('id', '!=', 1);
     }
 
+    public function country() : BelongsTo
+    {
+        return $this->belongsTo(Country::class);
+    }
 
+    public function categories() : HasMany
+    {
+        return $this->hasMany(Category::class);
+    }
 }

@@ -3,7 +3,7 @@
         inline-flex items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         <div class="lg:h-8 lg:w-8 h-7 w-7 rounded-full flex-1 ltr:mr-[10px] rtl:ml-[10px]">
             <img class="block w-full h-full object-cover rounded-full" src="{{
-                auth()->user()->getFirstMediaUrl('profile-image', 'preview') ?:
+                // auth()->user()->getFirstMediaUrl('profile-image', 'preview') ?:
                 Avatar::create(auth()->user()->name)->toBase64() }}" alt="user" />
         </div>
         <div class="ltr:text-left rtl:text-right">

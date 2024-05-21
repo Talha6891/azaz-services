@@ -1,21 +1,16 @@
 <?php
 
-use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AppsController;
-use App\Http\Controllers\FormController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\TableController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UtilityController;
-use App\Http\Controllers\WidgetsController;
 use App\Http\Controllers\SetLocaleController;
-use App\Http\Controllers\ComponentsController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\DatabaseBackupController;
 use App\Http\Controllers\GeneralSettingController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ServiceController;
 
 require __DIR__ . '/auth.php';
 
@@ -44,4 +39,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // Database Backup
     Route::resource('database-backups', DatabaseBackupController::class);
     Route::get('database-backups-download/{fileName}', [DatabaseBackupController::class, 'databaseBackupDownload'])->name('database-backups.download');
+
+    // Category
+    Route::resource('categories',CategoryController::class);
+    // Service
+    Route::resource('services',ServiceController::class);
 });
