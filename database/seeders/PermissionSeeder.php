@@ -13,7 +13,7 @@ class PermissionSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         $permissions = collect([
             ['name' => 'user create', 'module_name' => 'user',],
@@ -56,6 +56,18 @@ class PermissionSeeder extends Seeder
             ['name' => 'service update', 'module_name' => 'service'],
             ['name' => 'service delete', 'module_name' => 'service'],
             ['name' => 'service show', 'module_name' => 'service'],
+
+            ['name' => 'plan index', 'module_name' => 'plan'],
+            ['name' => 'plan create', 'module_name' => 'plan'],
+            ['name' => 'plan update', 'module_name' => 'plan'],
+            ['name' => 'plan delete', 'module_name' => 'plan'],
+            ['name' => 'plan show', 'module_name' => 'plan'],
+
+            ['name' => 'customerRequest index', 'module_name' => 'customerRequest'],
+            ['name' => 'customerRequest create', 'module_name' => 'customerRequest'],
+            ['name' => 'customerRequest update', 'module_name' => 'customerRequest'],
+            ['name' => 'customerRequest delete', 'module_name' => 'customerRequest'],
+            ['name' => 'customerRequest show', 'module_name' => 'customerRequest'],
         ]);
 
         $web = collect([]);
