@@ -37,6 +37,7 @@ class ServiceController extends Controller
             ->allowedSorts(['name', 'created_at'])
             ->where('name', 'like', "%$q%")
             ->orWhere('created_at', 'like', "%$q%")
+            ->with('category')
             ->latest()
             ->paginate($perPage)
             ->appends(['per_page' => $perPage, 'q' => $q, 'sort' => $sort]);
