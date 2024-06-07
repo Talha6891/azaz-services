@@ -11,6 +11,8 @@ use App\Http\Controllers\DatabaseBackupController;
 use App\Http\Controllers\GeneralSettingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PlanController;
+use App\Http\Controllers\CustomerRequestController;
 
 require __DIR__ . '/auth.php';
 
@@ -44,4 +46,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('categories',CategoryController::class);
     // Service
     Route::resource('services',ServiceController::class);
+    // Plan
+    Route::resource('plans',PlanController::class);
+    //Customer Request
+    Route::resource('customer-requests', CustomerRequestController::class);
+
 });
