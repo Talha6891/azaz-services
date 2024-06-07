@@ -17,7 +17,7 @@ use App\Http\Controllers\CustomerRequestController;
 require __DIR__ . '/auth.php';
 
 Route::get('/', function () {
-    return to_route('login');
+    return view('site.site');
 });
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
