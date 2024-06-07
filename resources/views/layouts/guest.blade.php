@@ -19,16 +19,11 @@
                         <div class="mb-6">
                             <x-application-logo />
                         </div>
-                        <h4>
-                            {{ __('Unlock your project') }}
-                            <span class="text-slate-800 dark:text-slate-400 font-bold">
-                                {{ __('Performance') }}
-                            </span>
-                        </h4>
+
                     </div>
-                    <div class="absolute left-0 2xl:bottom-[-160px] bottom-[-130px] h-full w-full z-[-1]">
+                    {{-- <div class="absolute left-0 2xl:bottom-[-160px] bottom-[-130px] h-full w-full z-[-1]">
                         <img class="h-full w-full object-containll" src="{{ getSettings('guest_background') }}" alt="image">
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="right-column  relative">
                     <div class="inner-content h-full flex flex-col bg-white dark:bg-slate-800">
@@ -38,7 +33,7 @@
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>
-                            , <a href="#">{{ __('Azaz Services') }}</a>
+                            , <a href="{{ url('/') }}">{{ __('Azaz Services') }}</a>
                             {{ __('All Rights Reserved.') }}
                         </div>
                     </div>

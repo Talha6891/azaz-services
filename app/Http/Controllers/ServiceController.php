@@ -6,11 +6,8 @@ use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Category;
 use App\Models\Service;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -29,7 +26,7 @@ class ServiceController extends Controller
                 'name' => 'Services',
                 'url' => route('services.index'),
                 'active' => true
-            ],
+            ]
         ];
 
         $q = $request->get('q');
@@ -40,6 +37,7 @@ class ServiceController extends Controller
             ->allowedSorts(['name', 'created_at'])
             ->where('name', 'like', "%$q%")
             ->orWhere('created_at', 'like', "%$q%")
+            ->with('category')
             ->latest()
             ->paginate($perPage)
             ->appends(['per_page' => $perPage, 'q' => $q, 'sort' => $sort]);

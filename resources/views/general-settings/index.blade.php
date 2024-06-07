@@ -72,7 +72,7 @@
                             <a href="{{ route('roles.index') }}"
                                 class="inline-flex items-center space-x-3 rtl:space-x-reverse text-sm capitalize font-medium text-slate-600
                                     dark:text-slate-300">
-                                <span>Chnage Settings</span>
+                                <span>Change Settings</span>
                                 <iconify-icon icon="heroicons:arrow-right"></iconify-icon>
                             </a>
                         </div>
@@ -96,7 +96,7 @@
                             <a href="{{ route('permissions.index') }}"
                                 class="inline-flex items-center space-x-3 rtl:space-x-reverse text-sm capitalize font-medium text-slate-600
                                     dark:text-slate-300">
-                                <span>Chnage Settings</span>
+                                <span>Change Settings</span>
                                 <iconify-icon icon="heroicons:arrow-right"></iconify-icon>
                             </a>
                         </div>
@@ -120,7 +120,7 @@
                                 href="{{ route('profiles.index') }}"
                                 class="inline-flex items-center space-x-3 rtl:space-x-reverse text-sm capitalize font-medium text-slate-600
                                     dark:text-slate-300">
-                                <span>Chnage Settings</span>
+                                <span>Change Settings</span>
                                 <iconify-icon icon="heroicons:arrow-right"></iconify-icon>
                             </a>
                         </div>
