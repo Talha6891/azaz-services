@@ -34,7 +34,6 @@
                 <x-nav-lang-dropdown />
                 <x-dark-light />
                 <x-gray-scale />
-                <x-nav-message-dropdown />
                 <x-nav-notification-dropdown />
                 <x-nav-user-dropdown />
                 <button class="smallDeviceMenuController md:hidden block leading-0">
