@@ -125,13 +125,13 @@ class CategoryController extends Controller
                 'name' => 'Show',
                 'url' => '#',
                 'active' => true
-            ],
+            ]
         ];
 
         return view('categories.show', [
             'category' => $category->load('user'),
             'breadcrumbItems' => $breadcrumbsItems,
-            'pageTitle' => 'Show category',
+            'pageTitle' => 'Show Category',
         ]);
 
     }
@@ -160,7 +160,7 @@ class CategoryController extends Controller
         return view('categories.edit', [
             'category' => $category,
             'breadcrumbItems' => $breadcrumbsItems,
-            'pageTitle' => 'Edit User',
+            'pageTitle' => 'Edit Category',
         ]);
     }
 

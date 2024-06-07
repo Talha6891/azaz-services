@@ -57,6 +57,30 @@
             </li>
             {{-- services end --}}
 
+                        {{-- plan start --}}
+                        <li>
+                            <a href="{{ route('plans.index') }}"
+                               class="navItem {{ (request()->is('plans*')) ? 'active' : '' }}">
+                                <span class="flex items-center">
+                                    <iconify-icon class="nav-icon" icon="streamline:subscription-cashflow" width="1rem" height="1rem"></iconify-icon>
+                                    <span>{{ __('Create Plan') }}</span>
+                                </span>
+                            </a>
+                        </li>
+                        {{-- plan end --}}
+
+                         {{-- customer request start --}}
+                         <li>
+                            <a href="{{ route('customer-requests.index') }}"
+                               class="navItem {{ (request()->is('customer-requests*')) ? 'active' : '' }}">
+                                <span class="flex items-center">
+                                    <iconify-icon class="nav-icon" icon="hugeicons:customer-service-01" width="1rem" height="1rem"></iconify-icon>
+                                    <span>{{ __('Customer Requests') }}</span>
+                                </span>
+                            </a>
+                        </li>
+                        {{-- customer request end --}}
+
             <!-- Database -->
             <li>
                 <a href="{{ route('database-backups.index') }}"

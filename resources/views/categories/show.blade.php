@@ -45,7 +45,7 @@
                                         <textarea type="text" id="description" name="description" class="form-control"
                                                   placeholder="Enter equipment description"
                                                   readonly
-                                        >{{ old('description', $specialty->description ?? 'N/A') }}</textarea>
+                                        >{{ old('description', $category->description ?? 'N/A') }}</textarea>
                                     <x-input-error :messages="$errors->get('description')" class="mt-2"/>
                                 </div>
                             </div>

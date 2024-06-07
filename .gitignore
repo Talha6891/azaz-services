@@ -22,3 +22,6 @@ yarn-error.log
 /storage/dotenv-editor
 /packages
 ngrok.exe
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
